@@ -3,7 +3,9 @@ import datetime
 import time
 
 START_TIME = "03:56:15.507"
+
 AFTER_CLICK = [0.500, 0.400, 0.444]
+# کلیک های بعد به ثانیه از چپ به راست
 
 
 def my_function():
