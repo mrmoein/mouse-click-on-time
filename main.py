@@ -2,7 +2,7 @@ import pyautogui
 import datetime
 import time
 
-START_TIME = "04:27:55.507"
+START_TIME = "04:31:15.507"
 
 AFTER_CLICK = [0.500, 0.400, 0.444]
 # کلیک های بعد به ثانیه از چپ به راست
@@ -28,7 +28,7 @@ def call_function_on_exact_time(time_string):
 
         if current_time >= scheduled_time:
             time_difference = (current_time - scheduled_time).total_seconds() * 1000
-            if 0 <= time_difference < 1:
+            if 0 <= time_difference:
                 my_function()
                 break
         else:
