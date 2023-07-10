@@ -2,13 +2,13 @@ import pyautogui
 import datetime
 import time
 
-START_TIME = "04:27:56:15.507"
+START_TIME = "04:27:55.507"
 
 AFTER_CLICK = [0.500, 0.400, 0.444]
 # کلیک های بعد به ثانیه از چپ به راست
 
 
-print(f'start at {START_TIME}')
+print(f'click at {START_TIME}')
 
 
 def my_function():
