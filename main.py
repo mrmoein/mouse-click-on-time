@@ -1,7 +1,7 @@
 import datetime
 from util_def import call_function_on_exact_time
 
-START_TIME = "05:52:55.537"
+START_TIME = "06:10:15.537"
 AFTER_CLICK = [0.400, 0.400, 0.400, 0.400, 0.400, 0.400, 0.400, 0.400, 0.400, 0.400, 0.400, 0.400, 0.400]
 #              -> -> -> -> -> ->
 

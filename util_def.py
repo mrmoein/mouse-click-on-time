@@ -5,6 +5,8 @@ from pynput.mouse import Controller, Button
 
 mouse = Controller()
 
+# event = threading.Event()
+
 
 def start_clicking(after_click):
     print("Function called at:", datetime.datetime.now().strftime("%H:%M:%S.%f"))
@@ -13,6 +15,7 @@ def start_clicking(after_click):
         t0 = time.time()
         mouse.click(Button.left)
         t1 = time.time()
+        # event.wait(millisecond_time - (t1 - t0))
         time.sleep(millisecond_time - (t1 - t0))
 
     mouse.click(Button.left)
@@ -27,15 +30,15 @@ def is_time_passed(target_time):
 def call_function_on_exact_time(time_string, after_click):
     scheduled_time = datetime.datetime.strptime(time_string, "%Y-%m-%d %H:%M:%S.%f")
 
-    if is_time_passed(scheduled_time):
+    current_time = datetime.datetime.now()
+
+    time_difference = (scheduled_time - current_time).total_seconds()
+
+    if time_difference <= 0:
         print("time passed! check time")
         exit()
 
-    while True:
-        if is_time_passed(scheduled_time):
-            time_difference = (datetime.datetime.now() - scheduled_time).total_seconds() * 1000
-            if 0 <= time_difference:
-                start_clicking(after_click)
-                break
-        else:
-            time.sleep(0.001)
+    time.sleep(time_difference)
+    # event.wait(time_difference)
+    start_clicking(after_click)
+
